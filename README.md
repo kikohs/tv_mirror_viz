@@ -25,3 +25,7 @@ Ideally, we would want most of our charts have an interactive timeline. So that 
 Moreover, since we have geographical data, we would like to have an interactive map, also with a timeline, that shows the places of interest in the broadcasts (like a heatmap).
 
 In order to emphasize the importance of RTS/SRG/SSR in bringing the Swiss together, we have thought of a similar map, but instead with arrows (a field map) that connect the areas of interest together. (For the records that have  more than one “geographical theme”— this is a feature in the dataset—  associated with them.)
+
+
+## Note
+This visualization is meant to complement this project: [https://github.com/m-yaghini/ada17/tree/master/project-master](https://github.com/m-yaghini/ada17/tree/master/project-master)
