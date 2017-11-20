@@ -93,9 +93,10 @@
 
       layer.setStyle({
           weight: 1,
-          color: 'white',
+          color: 'black',
+          opacity: 0.5,
           dashArray: '',
-          fillOpacity: 1
+          fillOpacity: 0.7
       });
 
       if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
@@ -133,7 +134,7 @@
     // Add Lines
     for( var i = 0; i < lines.length; i++ ){
       let pointA = new L.LatLng(e.target.getCenter().lat, e.target.getCenter().lng);
-      let pointB = new L.LatLng(swiss_data.features[i].properties.center[0],swiss_data.features[i].properties.center[1]);
+      let pointB = new L.LatLng(swiss_data.features[lines[i]].properties.center[0],swiss_data.features[lines[i]].properties.center[1]);
       pointList.push(pointA);
       pointList.push(pointB);
     }
@@ -141,9 +142,9 @@
     // Draw Added Lines
     polyLine = new L.Polyline(pointList, {
         color: 'black',
-        weight: 3,
-        opacity: 0.7,
-        smoothFactor: 1
+        weight: 7,
+        opacity: 0.5,
+        smoothFactor: 1,
     });
 
     map.addLayer(polyLine);
