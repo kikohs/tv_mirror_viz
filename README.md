@@ -3,7 +3,7 @@
 
 # Important Links
 
-You can reach our visualization and process book from (here)[http://skagankose.github.io/dv_fall_2017/].
+You can reach our visualization and process book from [here](http://skagankose.github.io/dv_fall_2017/).
 
 ## Overview
 The popular media is an (imperfect) mirror of the society. In this project, we want to study the effect of social trends and events of the past century on TV/Radio broadcasts. The 20th century saw the invention and ubiquity of the broadcast media: first radio and then television. At the same time, many international events (World Wars, the rise and the fall of Communism, the formation of European Union, etc) as well as national incidents (sexual revolution of 1960's, the establishment of women voting right) took place in this period. All of these events had profound impact on the society, and as a result on broadcast media such as TV and Radio. 
