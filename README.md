@@ -1,7 +1,7 @@
 
 # Visualizing the ”TV Mirror “ : Evolution and Importance of the National Swiss Radio/TV Broadcasts in the Course of the Last Century
 
-# Important Link
+# Important Links
 
 You can reach our visualization and process book from (here)[http://skagankose.github.io/dv_fall_2017/].
 
