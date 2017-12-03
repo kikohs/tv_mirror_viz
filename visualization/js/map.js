@@ -202,8 +202,14 @@ var polygonLayer;
 var concaveLayer;
 
 function removeSuperEdge(e) {
-    try { map.removeLayer(polygonLayer); } catch (err) {};
-    try { map.removeLayer(concaveLayer); } catch (err) {};
+    // Manually Delete Layers
+    // try { map.removeLayer(polygonLayer); } catch (err) {};
+    // try { map.removeLayer(concaveLayer); } catch (err) {};
+
+    // Delete All Layers except Initials
+    map.eachLayer(function (layer) {
+      if (layer._leaflet_id > 150) {map.removeLayer(layer);};
+    });
 }
 
 // Draw SuperEdges Given List of Connections
