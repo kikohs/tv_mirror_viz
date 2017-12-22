@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> TV Mirror </title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Stylesheet
+        ================================================== -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/heatmap.css">
+
+
+    <!-- Leaflet's CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css"
+          integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ=="
+          crossorigin=""/>
+
+    <!-- Leaflet's J -->
+    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"
+            integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log=="
+            crossorigin=""></script>
+
+    <!-- D3 -->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="js/SimpleSlider.js"></script>
+    <script src="js/ConcaveHull.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+            integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+            integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+            crossorigin="anonymous"></script>
+
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+          integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" type="text/css"  href="css/bootstrap.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.css"> -->
+
+
+    <!-- Bootstrap -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"> -->
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/timeline.css">
+    <!--<link rel="stylesheet" href="css/map.css">-->
+
+    <!-- W3 -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://use.fontawesome.com/aa539bf0ef.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+
+
+    <!-- Select 2 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+
+
+    <!--Dependencies: Leaflet, Heatmap Overlay, jQuery, Select2, noUiSlider -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css"
+          integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ=="
+          crossorigin=""/>
+    <script src="js/heatmap.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"
+            integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log=="
+            crossorigin=""></script>
+    <script src="js/heatmap_overlay.js"></script>
+    <script src="data/code2genre.js"></script>
+    <script src="data/genre2code.js"></script>
+
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.4/lodash.min.js"></script>
+
+    <link href="css/nouislider.css" rel="stylesheet"/>
+    <script src="js/nouislider.js"></script>
+
+
+</head>
+<body>
+
+<div id="header">
+    <br>
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-sm-12">
+                <h1>
+                    Heatmap
+                </h1>
+            </div>
+        </div>
+    </div>
+    <br>
+
+</div>
+
+<div class="row">
+    <div class="col-sm-3" style="margin-right:-30px;">
+
+        <!--<div class="card">-->
+
+        <!--</div>-->
+        <div class="card">
+
+
+            <div class="card-header" role="tab" id="headingTwoV3">
+                <h4 class="mb-0">
+                    <a>
+                        <span id="filter-controls"> Filtering</span>
+                    </a>
+
+                    <h6><b> Genres </b></h6>
+                    <select id="genreList" title="genres" multiple="multiple">
+                        <option value="0" selected>All</option>
+                    </select>
+
+                </h4>
+                <br>
+                <br>
+                <br>
+                <h4>
+                    <a>
+                        <span id="playback"> Playback</span>
+                    </a>
+
+                    <h6><b> Speed </b></h6>
+                    <br>
+                    <br>
+
+                    <div id="slider" class="class-speed-handle">
+                    </div>
+                    <br>
+                    <br>
+
+
+                    <h6><b> Reverb</b>
+                        <br>
+                        Number of days that the news effect lingers on the map
+                    </h6>
+                    <br>
+                    <br>
+
+                    <div id="slider-reverb" class="class-speed-handle">
+                    </div>
+                    <br>
+                    <br>
+                </h4>
+
+                <h4>
+                    <a>
+                        <span id="playback"> Presents</span>
+                    </a>
+
+                    <h6>
+                        <a href="javascript:setPresent(presentWorld)"><b>World</b></a>
+                        <br>
+                        <a href="javascript:setPresent(presentSwitzerland)"><b>Switzerland</b></a>
+                        <br>
+                        <a href="javascript:setPresent(presentEurope)"><b>Europe</b></a>
+                        <br>
+                    </h6>
+                </h4>
+
+                <br>
+                <br>
+                <br>
+                <h4>
+                    <a href="index.html"> Back to Main Page</a>
+                </h4>
+            </div>
+
+
+
+        </div>
+
+    </div>
+    <div class="col-sm-9">
+        <div id="map-container"></div>
+    </div>
+</div>
+
+<div>
+
+    <!-- <div class="container"> -->
+    <div class="row text-center">
+        <div class="col-sm-12">
+
+            <div class="card">
+                <div class="card-header" role="tab" id="headingOne">
+                    <h5 class="mb-0">
+                        <a data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <span id="slider_title"> Timeline</span>
+                        </a>
+                    </h5>
+                </div>
+
+                <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne"
+                     data-parent="#accordion">
+                    <div class="card-body">
+                        <!-- <div id="slider"></div> -->
+
+                        <div id="vis">
+                            <button id="play-button" class="class-play">Play</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<footer class="footer">
+    <div id="footer_div" class="container text-center">
+        <span class="text-muted">&copy; 2017
+
+          <div class="popup" onclick="" style="color:#5b93c3;"><u>SAM</u>
+            <span class="popuptext" id="myPopup">Suha - Ahmad - Mohammad</span>
+          </div>
+          , All Rights Reserved.</span>
+    </div>
+</footer>
+
+
+<script src="data/loc2coord_dict.js"></script>
+<script src="data/switzerland.js"></script>
+
+<!--  Coding Dicttionaries  -->
+
+<script src="data/code2loc.js"></script>
+<script src="data/loc2code.js"></script>
+
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>-->
+<script src="js/heatmap_main.js"></script>
+<!-- <script src="http://underscorejs.org/underscore.js"></script> -->
+
+</body>
